@@ -1,0 +1,57 @@
+<div>
+  <section class="navbar">
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+    <mat-menu class="navbar" #menu="matMenu">
+      <button (click)="clickPeople()" mat-menu-item>People</button>
+      <button (click)="clickFilms()" mat-menu-item>Films</button>
+      <button (click)="clickShips()" mat-menu-item>Star Ships</button>
+    </mat-menu>
+  </section>
+
+
+  <section class="title">
+    <h2 class="th2">Star Wars API Search</h2>
+    <p class="tp">
+      Pick a category to search from, and enter a name of a character, star ship, or film, then give it a go!
+    </p>
+  </section>
+
+
+  <section class="search">
+    <form [formGroup]="swapiSearch" (ngSubmit)="swapiSearch()">
+      <mat-form-field class="inputs">
+        <input matInput formControlName="userSearch" placeholder="Search here" required>
+      </mat-form-field>
+      
+      <button 
+        (click)="fetchData()"  
+        mat-raised-button 
+        color="primary"
+        class="inputs"
+        >
+        Search the API
+      </button>
+        
+      <!-- <mat-form-field class="inputs">
+        <mat-select 
+          formControlName="category"
+          placeholder="Choose Category"
+          required>
+            <mat-option value="people">People</mat-option>
+            <mat-option value="films">Films</mat-option>
+            <mat-option value="starships">Star Ships</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+    </form>
+  </section>
+
+
+  <section class="fetch-data">
+
+  </section>
+
+
+
+
+</div>
